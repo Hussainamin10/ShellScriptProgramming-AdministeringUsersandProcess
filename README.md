@@ -1,0 +1,1 @@
+The project consists of creating different scripts, and each script has a different function that will help to add, list, or search information. Also creating other commands that will set up the date, erase data, etc.
