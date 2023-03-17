@@ -1,0 +1,11 @@
+#!/bin/bash
+
+looptest=y;
+while [ "$looptest" = y ]
+ do
+  echo -n "Enter Family Name: " ; read name
+  echo -n "Enter Relation: " ; read relation
+  echo -n "Enter Phone Number: " ; read phoneNumber
+  echo "$name-$relation:$phoneNumber" >> ~/scriptProject/familyData
+  echo -n "Continue? (y)es or (n)o: " ; read looptest
+done

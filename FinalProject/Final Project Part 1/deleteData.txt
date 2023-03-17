@@ -1,0 +1,15 @@
+#!/bin/bash
+ 
+looptest=y;
+while [ "$looptest" = y ]
+do
+ echo -n "Enter Delete Criterion: " ; read deleteCriterion
+ if grep -q -i "$deleteCriterion" ~/scriptProject/familyData; then
+      sed -i "/$deleteCriterion/d" ~/scriptProject/familyData
+      echo "Record has been deleted"
+  else
+      echo "Does not exist!"
+fi
+ sed -i "/$deleteCriterion/d" ~/scriptProject/familyData
+ echo -n "Continue? (y)es or (n)o: " ; read looptest
+done

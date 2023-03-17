@@ -1,0 +1,45 @@
+#!/bin/bash
+
+mkdir -p ~/scriptProject
+
+cd scriptProject
+ 
+if [ -f ~/addData ]; then
+      mv -i ~/addData ~/scriptProject
+fi
+
+if [ -f ~/listData ]; then
+      mv -i ~/listData ~/scriptProject
+fi
+
+if [ -f ~/SayemHussainMaxymPhoneApp ]; then
+      mv -i ~/SayemHussainMaxymPhoneApp ~/scriptProject
+fi
+
+if [ -f ~/deleteData ]; then
+      mv -i ~/deleteData ~/scriptProject
+fi
+
+if [ -f ~/searchData ]; then
+      mv -i ~/searchData ~/scriptProject
+fi
+
+looptest=n;
+while [ "$looptest" = n ]
+do
+ echo "----------- Menu -----------"
+ echo "A. Would you like to add data: "
+ echo "B. Would you like to delete data: "
+ echo "C. Would you like to search data: "
+ echo "D. Would you like to list data: "
+ 
+ echo -n "Please enter your choice: " ; read choice
+ case $choice in
+ a | A) ./addData ;;
+ b | B) ./deleteData ;;
+ c | C) ./searchData ;;
+ d | D) ./listData ;;
+     *) echo -e "Invalid choice! \a" ;;
+     esac
+ echo -n "Quit the application? (y)es or (n)o: " ; read looptest
+done

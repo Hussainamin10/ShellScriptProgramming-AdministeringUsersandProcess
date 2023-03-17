@@ -1,0 +1,6 @@
+#!/bin/bash
+ 
+for line in ~/scriptProject/familyData
+do
+ awk -F'[-:]' ' { printf "%s is %s, can be contacted at %s-%s-%s\n", $1, $2, $3, $4, $5 } ' ~/scriptProject/familyData
+done

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+looptest=y;
+while [ "$looptest" = y ]
+do
+ echo -n "Enter Search Criterion: " ; read criterion
+ if grep -q -i "$criterion" ~/scriptProject/familyData; then
+      grep -i "$criterion" ~/scriptProject/familyData
+   else
+      echo "Does not exist!"
+fi
+ echo -n "Continue? (y)es or (n)o: "; read looptest
+done
